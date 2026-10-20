@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fatima Allali — Allali's Firm</title>
-<meta name="description" content="Fatima Allali, Associate Director chez Allali's Firm. PhD, Ing, MBA École des Ponts Business School.">
+<title>Dr. Fatima Zahra Allali — Allali's Firm</title>
+<meta name="description" content="Dr. Fatima Zahra Allali, Associate Director chez Allali's Firm. PhD, Ing, MBA Paris École des Ponts Business School.">
 <meta name="theme-color" content="#efe9df">
-<meta property="og:title" content="Fatima Allali — Allali's Firm">
-<meta property="og:description" content="Associate Director · PhD, Ing, MBA École des Ponts Business School">
+<meta property="og:title" content="Dr. Fatima Zahra Allali — Allali's Firm">
+<meta property="og:description" content="Associate Director · PhD, Ing, MBA Paris École des Ponts Business School">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
@@ -38,9 +38,10 @@
   .rule{width:44px;height:1px;background:var(--ink);opacity:.5;margin:22px auto 34px}
   h1{
     font-family:"Cormorant Garamond",Georgia,serif;
-    font-weight:500;font-size:44px;line-height:1.05;letter-spacing:.01em;
+    font-weight:500;font-size:42px;line-height:1.08;letter-spacing:.01em;
     text-align:center;
   }
+  h1 .dr{font-size:.62em;letter-spacing:.02em}
   .creds{
     font-family:"Cormorant Garamond",Georgia,serif;
     font-size:18px;color:var(--ink-soft);text-align:center;margin-top:12px;line-height:1.35;
@@ -72,12 +73,12 @@
   <div class="firm">ALLALI’S FIRM</div>
   <div class="rule"></div>
 
-  <h1>Fatima Allali</h1>
-  <p class="creds">PhD, Ing, MBA<br>École des Ponts Business School</p>
+  <h1><span class="dr">Dr.</span> Fatima Zahra<br>Allali</h1>
+  <p class="creds">PhD, Ing, MBA<br>Paris École des Ponts Business School</p>
   <p class="role">Associate Director</p>
 
   <div class="actions">
-    <a class="btn primary" href="contact.vcf" download="Fatima-Allali.vcf">
+    <a class="btn primary" href="contact.vcf" download="Dr-Fatima-Zahra-Allali.vcf">
       <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
       Enregistrer le contact
     </a>
@@ -114,7 +115,7 @@
   const url = location.href.split('#')[0];
   document.getElementById('share').addEventListener('click', async () => {
     if (navigator.share) {
-      try { await navigator.share({ title: "Fatima Allali — Allali's Firm", url }); } catch (e) {}
+      try { await navigator.share({ title: "Dr. Fatima Zahra Allali — Allali's Firm", url }); } catch (e) {}
     } else { copy(); }
   });
   document.getElementById('copy').addEventListener('click', copy);
