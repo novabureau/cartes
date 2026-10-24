@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chaima Ouaassine — Doctorante</title>
 <meta name="description" content="Chaima Ouaassine, doctorante en politiques publiques de santé.">
-<meta name="theme-color" content="#efe9df">
+<meta name="theme-color" content="#1f4038">
 <meta property="og:title" content="Chaima Ouaassine">
 <meta property="og:description" content="Doctorante en politiques publiques de santé">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,10 @@
   :root{
     --ink:#1f1d1a;
     --ink-soft:#5a544b;
-    --accent:#9a7b4f;
+    --accent:#b8925a;
+    --gold:#d9b77e;
+    --green:#1f4038;
+    --green-2:#2f5d52;
     --line:rgba(31,29,26,.14);
     --paper:#efe9df;
     --card:rgba(251,248,242,.72);
@@ -36,61 +39,77 @@
   .hero{
     position:relative;text-align:center;
     padding:44px 24px 38px;
-    border:1px solid var(--line);border-radius:22px;
-    background:var(--card);
-    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 18px 40px -28px rgba(60,45,25,.45);
+    border-radius:24px;overflow:hidden;color:#f4ecdd;
+    background:
+      radial-gradient(120% 70% at 50% 0%, rgba(217,183,126,.22), transparent 60%),
+      radial-gradient(90% 60% at 100% 100%, rgba(255,255,255,.06), transparent 60%),
+      linear-gradient(160deg, var(--green-2), var(--green) 70%);
+    box-shadow:0 26px 50px -24px rgba(20,40,35,.65);
   }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 0 40 20 20 40 0 20Z' fill='none' stroke='%23d9b77e' stroke-opacity='.07'/%3E%3C/svg%3E");
+  }
+  .hero > *{position:relative;z-index:1}
   .hero::before{
-    content:"";position:absolute;inset:7px;border:1px solid rgba(154,123,79,.28);border-radius:16px;pointer-events:none;
+    content:"";position:absolute;inset:7px;border:1px solid rgba(217,183,126,.45);border-radius:17px;pointer-events:none;z-index:1;
   }
   .mono{
     width:78px;height:78px;margin:0 auto;border-radius:50%;
     display:grid;place-items:center;
-    border:1px solid var(--accent);
+    border:1px solid var(--gold);
+    background:radial-gradient(circle at 35% 30%, rgba(217,183,126,.25), rgba(217,183,126,.04) 70%);
     font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;
-    font-size:30px;letter-spacing:.02em;color:var(--ink);
+    font-size:30px;letter-spacing:.02em;color:var(--gold);
     position:relative;
   }
-  .mono::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(154,123,79,.35)}
+  .mono::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(217,183,126,.4)}
+  .mono::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px dashed rgba(217,183,126,.35);animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
   h1{
-    margin-top:26px;
+    margin-top:28px;color:#fbf6ec;
     font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;
     font-size:46px;line-height:1;letter-spacing:.005em;
   }
-  h1 em{display:block;font-weight:400;color:var(--ink-soft);font-size:.82em;margin-bottom:4px}
-  .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 18px;color:var(--accent)}
+  h1 em{display:block;font-weight:400;color:var(--gold);font-size:.82em;margin-bottom:4px}
+  .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 18px;color:var(--gold)}
   .orn i{display:block;width:38px;height:1px;background:currentColor;opacity:.6}
   .orn b{width:6px;height:6px;transform:rotate(45deg);border:1px solid currentColor}
-  .role{font-size:11.5px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
-  .field{margin-top:8px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:20px;color:var(--ink-soft)}
+  .role{font-size:11.5px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:#fbf6ec}
+  .field{margin-top:8px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:20px;color:rgba(244,236,221,.82)}
 
   /* ---- Actions rapides ---- */
   .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 4px 0}
-  .q{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:11.5px;letter-spacing:.04em}
+  .q{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:11.5px;font-weight:500;letter-spacing:.04em}
   .q span.c{
     width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
-    background:var(--card);border:1px solid var(--line);
+    background:linear-gradient(160deg,var(--green-2),var(--green));color:var(--gold);
+    border:1px solid rgba(217,183,126,.5);
+    box-shadow:0 10px 20px -12px rgba(20,40,35,.7);
     transition:transform .15s ease, background .2s ease, color .2s ease;
   }
-  .q:active span.c{transform:scale(.94);background:var(--ink);color:#f7f2e9}
-  @media (hover:hover){.q:hover span.c{background:var(--ink);color:#f7f2e9}}
+  .q:active span.c{transform:scale(.92);background:var(--gold);color:var(--green)}
+  @media (hover:hover){.q:hover span.c{background:var(--gold);color:var(--green)}}
   svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
   .save{
     margin-top:22px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;
     padding:17px 20px;border-radius:16px;border:0;
-    background:var(--ink);color:#f7f2e9;text-decoration:none;
-    font:500 15px/1 "Jost",system-ui,sans-serif;letter-spacing:.03em;
-    box-shadow:0 14px 30px -18px rgba(31,29,26,.8);
-    transition:transform .15s ease;
+    background:linear-gradient(135deg,#e2c38c,#b8925a 55%,#d9b77e);background-size:200% 100%;
+    color:#1f3a33;text-decoration:none;
+    font:500 15px/1 "Jost",system-ui,sans-serif;letter-spacing:.04em;
+    box-shadow:0 14px 30px -16px rgba(150,110,50,.75);
+    transition:transform .15s ease;animation:sheen 4s ease-in-out infinite;
   }
   .save:active{transform:scale(.985)}
+  @keyframes sheen{0%,100%{background-position:0 0}50%{background-position:100% 0}}
 
   /* ---- Coordonnées ---- */
   .details{margin-top:14px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
   .d{display:flex;align-items:center;gap:14px;padding:15px 18px;text-decoration:none;color:var(--ink)}
   .d + .d{border-top:1px solid var(--line)}
-  .d svg{color:var(--accent);flex:none;width:19px;height:19px}
+  .d svg{flex:none;width:19px;height:19px}
+  .d .ic{width:38px;height:38px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(31,64,56,.09);color:var(--green-2)}
   .d div{min-width:0;flex:1}
   .d small{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
   .d strong{display:block;font-weight:400;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -107,7 +126,7 @@
   .rise{opacity:0;transform:translateY(10px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
   .r2{animation-delay:.08s}.r3{animation-delay:.16s}.r4{animation-delay:.24s}.r5{animation-delay:.32s}
   @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise,.save,.mono::before{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -134,17 +153,17 @@
 
   <section class="details rise r4">
     <a class="d" href="tel:+212614968527">
-      <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
       <div><small>Téléphone</small><strong>+212 614 968 527</strong></div>
       <svg class="arr" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
     </a>
     <a class="d" href="mailto:chaimaouaassine01@gmail.com">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
       <div><small>Email</small><strong>chaimaouaassine01@gmail.com</strong></div>
       <svg class="arr" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
     </a>
     <a class="d" href="https://www.linkedin.com/in/chaima-ouaassine-8ba038281" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg>
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg></span>
       <div><small>LinkedIn</small><strong>Chaima Ouaassine</strong></div>
       <svg class="arr" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
     </a>
