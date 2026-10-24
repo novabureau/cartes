@@ -6,114 +6,154 @@
 <title>Chaima Ouaassine — Doctorante</title>
 <meta name="description" content="Chaima Ouaassine, doctorante en politiques publiques de santé.">
 <meta name="theme-color" content="#efe9df">
-<meta property="og:title" content="Chaima Ouaassine — Doctorante">
+<meta property="og:title" content="Chaima Ouaassine">
 <meta property="og:description" content="Doctorante en politiques publiques de santé">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1d1b18;
-    --ink-soft:#4a4640;
-    --line:rgba(29,27,24,.16);
+    --ink:#1f1d1a;
+    --ink-soft:#5a544b;
+    --accent:#9a7b4f;
+    --line:rgba(31,29,26,.14);
     --paper:#efe9df;
-    --btn:#fbf8f2;
+    --card:rgba(251,248,242,.72);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%}
   body{
     background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.38' numOctaves='3' stitchTiles='stitch'/%3E%3CfeDiffuseLighting lighting-color='%23f1ece3' surfaceScale='.8'%3E%3CfeDistantLight azimuth='45' elevation='72'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") repeat;
     color:var(--ink);
-    font-family:"Jost",system-ui,sans-serif;
+    font-family:"Jost",system-ui,sans-serif;font-weight:400;
     -webkit-font-smoothing:antialiased;
     display:flex;justify-content:center;
-    padding:48px 20px calc(32px + env(safe-area-inset-bottom));
+    padding:28px 16px calc(28px + env(safe-area-inset-bottom));
   }
-  main{width:100%;max-width:420px;display:flex;flex-direction:column;min-height:calc(100vh - 80px)}
-  .firm{
-    font-family:"Cormorant Garamond",Georgia,serif;
-    font-weight:500;font-size:15px;letter-spacing:.32em;
-    text-align:center;color:var(--ink-soft);
+  main{width:100%;max-width:420px}
+
+  /* ---- En-tête encadré ---- */
+  .hero{
+    position:relative;text-align:center;
+    padding:44px 24px 38px;
+    border:1px solid var(--line);border-radius:22px;
+    background:var(--card);
+    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 18px 40px -28px rgba(60,45,25,.45);
   }
-  .rule{width:44px;height:1px;background:var(--ink);opacity:.5;margin:22px auto 34px}
+  .hero::before{
+    content:"";position:absolute;inset:7px;border:1px solid rgba(154,123,79,.28);border-radius:16px;pointer-events:none;
+  }
+  .mono{
+    width:78px;height:78px;margin:0 auto;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid var(--accent);
+    font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;
+    font-size:30px;letter-spacing:.02em;color:var(--ink);
+    position:relative;
+  }
+  .mono::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(154,123,79,.35)}
   h1{
-    font-family:"Cormorant Garamond",Georgia,serif;
-    font-weight:500;font-size:42px;line-height:1.08;letter-spacing:.01em;
-    text-align:center;
+    margin-top:26px;
+    font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;
+    font-size:46px;line-height:1;letter-spacing:.005em;
   }
-  h1 .dr{font-size:.62em;letter-spacing:.02em}
-  .creds{
-    font-family:"Cormorant Garamond",Georgia,serif;
-    font-size:18px;color:var(--ink-soft);text-align:center;margin-top:12px;line-height:1.35;
+  h1 em{display:block;font-weight:400;color:var(--ink-soft);font-size:.82em;margin-bottom:4px}
+  .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 18px;color:var(--accent)}
+  .orn i{display:block;width:38px;height:1px;background:currentColor;opacity:.6}
+  .orn b{width:6px;height:6px;transform:rotate(45deg);border:1px solid currentColor}
+  .role{font-size:11.5px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
+  .field{margin-top:8px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:20px;color:var(--ink-soft)}
+
+  /* ---- Actions rapides ---- */
+  .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 4px 0}
+  .q{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:11.5px;letter-spacing:.04em}
+  .q span.c{
+    width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+    background:var(--card);border:1px solid var(--line);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
   }
-  .role{
-    font-size:13px;letter-spacing:.24em;text-transform:uppercase;
-    text-align:center;margin-top:22px;color:var(--ink);
+  .q:active span.c{transform:scale(.94);background:var(--ink);color:#f7f2e9}
+  @media (hover:hover){.q:hover span.c{background:var(--ink);color:#f7f2e9}}
+  svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+  .save{
+    margin-top:22px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;
+    padding:17px 20px;border-radius:16px;border:0;
+    background:var(--ink);color:#f7f2e9;text-decoration:none;
+    font:500 15px/1 "Jost",system-ui,sans-serif;letter-spacing:.03em;
+    box-shadow:0 14px 30px -18px rgba(31,29,26,.8);
+    transition:transform .15s ease;
   }
-  .actions{margin-top:40px;display:grid;gap:10px}
-  .btn{
-    display:flex;align-items:center;gap:14px;
-    padding:15px 18px;border:1px solid var(--line);border-radius:14px;
-    background:var(--btn);color:var(--ink);text-decoration:none;
-    font-size:15px;transition:transform .15s ease, background .15s ease;
+  .save:active{transform:scale(.985)}
+
+  /* ---- Coordonnées ---- */
+  .details{margin-top:14px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
+  .d{display:flex;align-items:center;gap:14px;padding:15px 18px;text-decoration:none;color:var(--ink)}
+  .d + .d{border-top:1px solid var(--line)}
+  .d svg{color:var(--accent);flex:none;width:19px;height:19px}
+  .d div{min-width:0;flex:1}
+  .d small{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+  .d strong{display:block;font-weight:400;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .d .arr{width:15px;height:15px;color:var(--ink-soft);opacity:.6}
+
+  .tools{display:flex;justify-content:center;gap:28px;margin-top:22px}
+  .tools button{
+    background:none;border:0;cursor:pointer;color:var(--ink-soft);
+    display:flex;align-items:center;gap:8px;font:400 13px/1 "Jost",system-ui,sans-serif;letter-spacing:.06em;padding:8px 4px;
   }
-  .btn:active{transform:scale(.985)}
-  .btn svg{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .btn .lbl{display:flex;flex-direction:column;line-height:1.25;min-width:0}
-  .btn small{font-size:12.5px;color:var(--ink-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .btn.primary{background:var(--ink);color:#f7f2e9;border-color:var(--ink);justify-content:center;font-weight:500;margin-bottom:6px}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .row .btn{justify-content:center}
-  footer{margin-top:auto;padding-top:44px;text-align:center;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);opacity:.75}
-  footer a{color:inherit}
+  .tools svg{width:17px;height:17px}
+
+  /* ---- Apparition ---- */
+  .rise{opacity:0;transform:translateY(10px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .r2{animation-delay:.08s}.r3{animation-delay:.16s}.r4{animation-delay:.24s}.r5{animation-delay:.32s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <main>
-  <div class="firm">C · O</div>
-  <div class="rule"></div>
+  <section class="hero rise">
+    <div class="mono">CO</div>
+    <h1><em>Chaima</em>Ouaassine</h1>
+    <div class="orn"><i></i><b></b><i></i></div>
+    <p class="role">Doctorante</p>
+    <p class="field">Politiques publiques de santé</p>
+  </section>
 
-  <h1>Chaima<br>Ouaassine</h1>
-  <p class="creds">Doctorante en politiques<br>publiques de santé</p>
+  <nav class="quick rise r2">
+    <a class="q" href="tel:+212614968527"><span class="c"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>Appeler</a>
+    <a class="q" href="https://wa.me/212614968527" target="_blank" rel="noopener"><span class="c"><svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2L9 9.5z"/></svg></span>WhatsApp</a>
+    <a class="q" href="mailto:chaimaouaassine01@gmail.com"><span class="c"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>Email</a>
+    <a class="q" href="https://www.linkedin.com/in/chaima-ouaassine-8ba038281" target="_blank" rel="noopener"><span class="c"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg></span>LinkedIn</a>
+  </nav>
 
-  <div class="actions">
-    <a class="btn primary" href="contact.vcf" download="Chaima-Ouaassine.vcf">
-      <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-      Enregistrer le contact
-    </a>
+  <a class="save rise r3" href="contact.vcf" download="Chaima-Ouaassine.vcf">
+    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+    Enregistrer le contact
+  </a>
 
-    <a class="btn" href="tel:+212614968527">
+  <section class="details rise r4">
+    <a class="d" href="tel:+212614968527">
       <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-      <span class="lbl">Appeler<small>+212 614 968 527</small></span>
+      <div><small>Téléphone</small><strong>+212 614 968 527</strong></div>
+      <svg class="arr" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
     </a>
-
-    <a class="btn" href="https://wa.me/212614968527" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2L9 9.5z"/></svg>
-      <span class="lbl">WhatsApp<small>Envoyer un message</small></span>
-    </a>
-
-    <a class="btn" href="mailto:chaimaouaassine01@gmail.com">
+    <a class="d" href="mailto:chaimaouaassine01@gmail.com">
       <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-      <span class="lbl">Email<small>chaimaouaassine01@gmail.com</small></span>
+      <div><small>Email</small><strong>chaimaouaassine01@gmail.com</strong></div>
+      <svg class="arr" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
     </a>
-
-    <a class="btn" href="https://www.linkedin.com/in/chaima-ouaassine-8ba038281" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2.5 2.5 0 0 1 5 0v4M11 10v7"/></svg>
-      <span class="lbl">LinkedIn<small>Chaima Ouaassine</small></span>
+    <a class="d" href="https://www.linkedin.com/in/chaima-ouaassine-8ba038281" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg>
+      <div><small>LinkedIn</small><strong>Chaima Ouaassine</strong></div>
+      <svg class="arr" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
     </a>
+  </section>
 
-    <div class="row">
-      <button class="btn" id="share" type="button" style="font:inherit;cursor:pointer">
-        <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4M12 2v13"/></svg>
-        Partager
-      </button>
-      <button class="btn" id="copy" type="button" style="font:inherit;cursor:pointer">
-        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        <span id="copyLbl">Copier</span>
-      </button>
-    </div>
+  <div class="tools rise r5">
+    <button id="share" type="button"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4M12 2v13"/></svg>Partager</button>
+    <button id="copy" type="button"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span id="copyLbl">Copier le lien</span></button>
   </div>
-
 </main>
 <script>
   const url = location.href.split('#')[0];
@@ -125,9 +165,9 @@
   document.getElementById('copy').addEventListener('click', copy);
   async function copy(){
     const lbl = document.getElementById('copyLbl');
-    try { await navigator.clipboard.writeText(url); lbl.textContent = 'Copié ✓'; }
+    try { await navigator.clipboard.writeText(url); lbl.textContent = 'Lien copié ✓'; }
     catch (e) { prompt('Copiez le lien :', url); }
-    setTimeout(() => lbl.textContent = 'Copier', 2000);
+    setTimeout(() => lbl.textContent = 'Copier le lien', 2000);
   }
 </script>
 </body>
