@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Ali;Aziz;;Mr;
+FN:Aziz Ali
+ORG:City Tiles
+TITLE:Gérant
+TEL;TYPE=CELL,VOICE:+212679557535
+TEL;TYPE=CELL,VOICE:+212612221554
+EMAIL;TYPE=INTERNET,WORK:citytiles.contact@gmail.com
+URL:https://citytiles.ma
+ADR;TYPE=WORK:;Showroom N°57;Safa 47, Av. My Abdellah;Marrakech;;;Maroc
+NOTE:Carrelage - Sanitaire - Robinetterie - Parquet - Cheminée - Feuille de pierre - Cuisine - Peinture - Décoration
+END:VCARD
