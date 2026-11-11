@@ -7,29 +7,69 @@
 <meta name="description" content="Stéphanie Hugon, Chief Operating Officer for Development — AHOMI World Group. Isabelle Bartoli, Designer and Founder.">
 <meta property="og:title" content="Stéphanie Hugon · AHOMI World">
 <meta property="og:description" content="Chief Operating Officer for Development — AHOMI World Group">
-<meta property="og:image" content="carte.jpg">
-<meta name="theme-color" content="#f3dbc3">
+<meta name="theme-color" content="#f3e3d1">
 <link rel="icon" href="icon.jpg" type="image/jpeg">
 <link rel="apple-touch-icon" href="icon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Jost:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3e3d1;--ink:#3f2a14;--soft:#8c7154;--gold:#b08443}
+:root{--ink:#24170b;--ink2:#2e2216;--gold:#b07a32;--gold2:#c9974f;--bg:#f3e3d1}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg)}
 body{font-family:"Jost",system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
-.wrap{width:100%;max-width:480px;padding-bottom:40px;text-align:center}
-.card{position:relative;line-height:0}
-.card img{display:block;width:100%;height:auto}
-.hot{position:absolute;display:block;border-radius:8px;-webkit-tap-highlight-color:rgba(176,132,67,.25)}
-.save{display:inline-block;margin:26px auto 0;padding:16px 32px;border-radius:999px;
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:480px;margin:0 auto;padding-bottom:34px;text-align:center}
+
+/* top save bar */
+.top{padding:14px 16px 12px;background:var(--bg)}
+.save{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 20px;border-radius:999px;
   background:linear-gradient(120deg,#8a6224,#c9a058 30%,#f1d89c 52%,#c9a058 74%,#8a6224);background-size:220% 100%;
-  color:#fffaf1;font-family:"Cinzel",serif;font-weight:600;font-size:13px;letter-spacing:.16em;text-decoration:none;
-  text-shadow:0 1px 1px rgba(74,47,18,.4);box-shadow:0 12px 26px -14px rgba(138,98,36,.9);transition:background-position .6s}
+  color:#fffaf1;font-family:"Jost",sans-serif;font-weight:500;font-size:14px;letter-spacing:.18em;
+  text-shadow:0 1px 1px rgba(74,47,18,.45);box-shadow:0 10px 22px -12px rgba(138,98,36,.9);transition:background-position .6s}
 .save:hover{background-position:100% 0}
-.links{margin-top:18px;font-size:14px;color:var(--soft);letter-spacing:.04em}
-.links a,.links button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:4px 2px;text-decoration:none}
+.save svg{width:18px;height:18px}
+
+/* card */
+.card{position:relative;width:100%;aspect-ratio:941/1672;background:url(fond.jpg) center/100% 100% no-repeat;container-type:inline-size;overflow:hidden}
+.card>*{position:absolute;left:50%;transform:translate(-50%,-50%);white-space:nowrap}
+.caps{font-family:"Jost",sans-serif;font-weight:400;text-transform:uppercase;color:var(--ink2)}
+.dot{display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--gold);vertical-align:.18em;margin:0 .9em}
+
+.pillars{top:8.3%;font-size:2.6cqw;letter-spacing:.14em;line-height:1.5}
+.rule{height:.22cqw;background:linear-gradient(90deg,transparent,var(--gold) 12%,var(--gold2) 50%,var(--gold) 88%,transparent)}
+.r1{top:11.55%;width:73%}
+.logo{top:12%;transform:none;left:calc(50% - 27.4%);width:59.2%;height:auto}
+.wlines{top:43.1%;width:66%;display:flex;justify-content:space-between}
+.wlines i{display:block;width:14.5cqw;height:.22cqw;background:linear-gradient(90deg,transparent,var(--gold))}
+.wlines i+i{background:linear-gradient(90deg,var(--gold),transparent)}
+.beat{top:46.95%;width:55%;height:auto}
+.name{font-family:"Source Serif 4",serif;font-weight:600;font-size:7.7cqw;letter-spacing:-.005em;color:var(--ink);line-height:1}
+.n1{top:51.4%}
+.sub{font-size:3.05cqw;letter-spacing:.22em;line-height:1.38;text-align:center}
+.s1{top:56.3%}
+.r2{top:59.95%;width:62%}
+.n2{top:62.9%}
+.s2{top:67.3%;font-size:3.2cqw;letter-spacing:.2em;line-height:1.35}
+
+.contacts{top:78.6%;width:70%;display:flex;flex-direction:column;gap:1.1cqw}
+.pill{display:flex;align-items:center;gap:3cqw;padding:.95cqw 3cqw .95cqw 1.4cqw;border-radius:999px;
+  background:rgba(255,250,242,.62);border:.22cqw solid rgba(176,122,50,.55);box-shadow:0 .8cqw 2cqw -1.2cqw rgba(120,80,30,.55);
+  font-size:3.85cqw;color:var(--ink);text-align:left;transition:background .2s,transform .15s}
+.pill:active{transform:scale(.98);background:rgba(255,245,230,.9)}
+.pill .ic{flex:none;width:5.6cqw;height:5.6cqw;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#c9974f,#9a6a28);color:#fff}
+.pill .ic svg{width:3.4cqw;height:3.4cqw}
+.pill .tx{flex:1;letter-spacing:.01em}
+.pill .go{flex:none;width:3cqw;height:3cqw;color:var(--gold)}
+.pill.mail{font-size:3.6cqw}
+
+.site{top:88.6%;width:92%;display:flex;align-items:center;gap:3cqw;font-size:3.05cqw;letter-spacing:.42em}
+.site i{flex:1;height:.22cqw;background:linear-gradient(90deg,transparent,var(--gold))}
+.site i+span+i{background:linear-gradient(90deg,var(--gold),transparent)}
+.motto{top:91.9%;font-size:2.7cqw;letter-spacing:.2em}
+
+.links{margin-top:20px;font-size:14.5px;color:#8c7154;letter-spacing:.04em}
+.links a,.links button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:4px 2px}
 .links i{font-style:normal;padding:0 10px;color:var(--gold)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);background:var(--ink);color:#fbe9cf;font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s}
 .toast.on{opacity:1;transform:translate(-50%,0)}
@@ -37,14 +77,53 @@ body{font-family:"Jost",system-ui,sans-serif;color:var(--ink);-webkit-font-smoot
 </head>
 <body>
 <main class="wrap">
-  <div class="card">
-    <img src="carte.jpg" alt="AHOMI World — Isabelle Bartoli, Designer and Founder · Stéphanie Hugon, Chief Operating Officer for Development · +33 6 27 03 56 88 · +212 6 77 36 16 63 · ahomiworld@gmail.com" width="941" height="1672">
-    <a class="hot" href="tel:+33627035688" aria-label="Appeler +33 6 27 03 56 88" style="left:29%;top:72.9%;width:47%;height:3.7%"></a>
-    <a class="hot" href="tel:+212677361663" aria-label="Appeler +212 6 77 36 16 63" style="left:29%;top:76.7%;width:49%;height:3.5%"></a>
-    <a class="hot" href="mailto:ahomiworld@gmail.com" aria-label="Écrire à ahomiworld@gmail.com" style="left:28.5%;top:80.3%;width:55%;height:3.4%"></a>
+  <div class="top">
+    <a class="save" href="contact.vcf" download="Stephanie-Hugon.vcf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      ENREGISTRER LE CONTACT
+    </a>
   </div>
 
-  <a class="save" href="contact.vcf" download="Stephanie-Hugon.vcf">ENREGISTRER LE CONTACT</a>
+  <section class="card" aria-label="Carte AHOMI World">
+    <p class="caps pillars">Art<span class="dot"></span>Architecture<span class="dot"></span>Well-being<br>Technology<span class="dot"></span>Innovation</p>
+    <div class="rule r1"></div>
+
+    <img class="logo" src="logo-ahomi.webp" alt="AHOMI World" width="557" height="537">
+    <div class="wlines" aria-hidden="true"><i></i><i></i></div>
+
+    <svg class="beat" viewBox="0 0 520 70" fill="none" aria-hidden="true">
+      <defs><linearGradient id="gb" x1="0" x2="1"><stop offset="0" stop-color="#b07a32" stop-opacity="0"/><stop offset=".2" stop-color="#b07a32"/><stop offset=".5" stop-color="#d5a35a"/><stop offset=".8" stop-color="#b07a32"/><stop offset="1" stop-color="#b07a32" stop-opacity="0"/></linearGradient></defs>
+      <path d="M0 36H200l10-10 9 18 12-36 12 54 12-44 9 26 8-8H520" stroke="url(#gb)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+
+    <h1 class="name n1">Isabelle Bartoli</h1>
+    <p class="caps sub s1">Designer and Founder<br>of the AHOMI World Group</p>
+    <div class="rule r2"></div>
+
+    <h2 class="name n2">Stéphanie Hugon</h2>
+    <p class="caps sub s2">Chief Operating Officer<br>for Development</p>
+
+    <div class="contacts">
+      <a class="pill" href="tel:+33627035688">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
+        <span class="tx">+33 6 27 03 56 88</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a class="pill" href="tel:+212677361663">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
+        <span class="tx">+212 6 77 36 16 63</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a class="pill mail" href="mailto:ahomiworld@gmail.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 0 1 1 1v.3l-10 6.2L2 6.3V6a1 1 0 0 1 1-1zm-1 3.6 9.5 5.9a1 1 0 0 0 1 0L22 8.6V18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></svg></span>
+        <span class="tx">ahomiworld@gmail.com</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <p class="caps site"><i></i><span>AHOMI.WORLD</span><i></i></p>
+    <p class="caps motto">Create<span class="dot"></span>Inspire<span class="dot"></span>Live better</p>
+  </section>
 
   <p class="links">
     <a href="https://wa.me/212677361663?text=Bonjour%20St%C3%A9phanie%2C%20" target="_blank" rel="noopener">WhatsApp</a><i>·</i><button type="button" id="share">Partager</button>
