@@ -8,53 +8,52 @@
 <meta property="og:title" content="Stéphanie Hugon · AHOMI World">
 <meta property="og:description" content="Chief Operating Officer for Development — AHOMI World Group">
 <meta name="theme-color" content="#f8e6d5">
-<link rel="icon" href="icon.jpg" type="image/jpeg">
-<link rel="apple-touch-icon" href="icon.jpg">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f8e6d5;--ink:#3f2a14;--soft:#8c7154;--gold:#b48535}
+:root{--bg:#f8e6d5;--ink:#3f2a14;--soft:#8c7154;--gold:#a8844f}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg)}
 body{font-family:"Jost",system-ui,sans-serif;font-weight:300;color:var(--ink);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100vh}
 a{color:inherit;text-decoration:none}
-.page{width:100%;max-width:400px;padding:56px 32px 48px;text-align:center;display:flex;flex-direction:column;min-height:100vh}
-.logo{display:block;width:150px;height:auto;margin:0 auto;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);
-  -webkit-mask-composite:source-in;
-  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);
-  mask-composite:intersect}
-h1{margin-top:44px;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:40px;line-height:1.05;letter-spacing:.01em}
-.role{margin-top:10px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--soft)}
-.rule{width:36px;height:1px;background:var(--gold);margin:36px auto}
-.contact{display:flex;flex-direction:column;gap:14px;font-size:17px;letter-spacing:.03em}
+.page{width:100%;max-width:400px;padding:44px 28px 40px;text-align:center}
+.emblem{display:block;width:132px;height:auto;margin:0 auto}
+.word{margin-top:14px;font-family:"Cinzel",serif;font-weight:500;font-size:30px;letter-spacing:.2em;padding-left:.2em;color:var(--gold);line-height:1}
+.world{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px;font-family:"Cinzel",serif;font-size:12px;letter-spacing:.5em;padding-left:.5em;color:var(--gold)}
+.world::before,.world::after{content:"";width:34px;height:1px;background:var(--gold)}
+.founder{margin-top:18px;font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.2}
+.founder em{display:block;font-size:17px;color:var(--soft)}
+.rule{width:36px;height:1px;background:var(--gold);margin:28px auto}
+h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:40px;line-height:1.05;letter-spacing:.01em}
+.role{margin-top:8px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--soft)}
+.contact{margin-top:28px;display:flex;flex-direction:column;gap:13px;font-size:17px;letter-spacing:.03em}
 .contact a{display:block}
 .contact span{display:block;font-family:"Cinzel",serif;font-size:9px;letter-spacing:.3em;color:var(--soft);margin-bottom:3px}
-.save{display:inline-block;margin:44px auto 0;padding:15px 34px;border:1px solid var(--gold);border-radius:999px;
+.save{display:inline-block;margin:34px auto 0;padding:15px 34px;border:1px solid var(--gold);border-radius:999px;
   font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.22em;color:var(--ink);transition:background .25s,color .25s}
 .save:hover,.save:active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.links{margin-top:22px;font-size:13.5px;color:var(--soft);letter-spacing:.04em}
-.links a,.links button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:4px 2px;border-bottom:1px solid transparent}
-.links a:hover,.links button:hover{border-bottom-color:var(--soft)}
+.links{margin-top:18px;font-size:13.5px;color:var(--soft);letter-spacing:.04em}
+.links a,.links button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:4px 2px}
 .links i{font-style:normal;padding:0 10px;color:var(--gold)}
-footer{margin-top:auto;padding-top:64px}
-footer .house{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.34em}
-footer .founder{margin-top:12px;line-height:1.3;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:var(--soft)}
-footer .founder b{font-style:normal;font-weight:500;color:var(--ink)}
-footer .pillars{margin-top:16px;font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:.24em;color:var(--soft);line-height:2}
+.pillars{margin-top:34px;font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:.24em;color:var(--soft);line-height:2}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);background:var(--ink);color:var(--bg);font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 </style>
 </head>
 <body>
 <main class="page">
-  <img class="logo" src="logo.webp" alt="AHOMI World" width="520" height="547">
+  <svg class="emblem" viewBox="70 10 450 420" role="img" aria-label="AHOMI World"><defs><linearGradient id="au" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c2a06b"/><stop offset=".55" stop-color="#a8844f"/><stop offset="1" stop-color="#8f6d3d"/></linearGradient></defs><g fill="url(#au)"><path d="M91.2 246.4 L88.6 238.4 L87.2 230.3 L86.2 222.1 L85.6 213.8 L85.4 205.5 L85.6 197.2 L86.2 188.9 L87.2 180.6 L88.5 172.3 L90.2 164.1 L92.2 156.0 L94.6 148.0 L97.4 140.0 L100.5 132.2 L103.9 124.5 L107.7 117.0 L111.8 109.6 L116.2 102.4 L120.9 95.4 L126.0 88.7 L131.3 82.1 L136.9 75.8 L142.7 69.7 L148.8 63.9 L155.2 58.4 L161.7 53.1 L168.5 48.2 L175.5 43.5 L182.7 39.2 L190.1 35.1 L197.6 31.4 L205.2 28.1 L213.0 25.1 L220.9 22.4 L229.0 20.1 L237.0 18.2 L245.2 16.7 L253.4 15.6 L261.6 15.0 L269.9 15.6 L270.1 17.1 L262.4 19.7 L254.6 21.9 L247.0 24.3 L239.4 26.8 L232.0 29.6 L224.7 32.6 L217.5 35.9 L210.5 39.4 L203.5 43.1 L196.8 47.1 L190.2 51.3 L183.7 55.7 L177.5 60.4 L171.4 65.2 L165.5 70.3 L159.8 75.6 L154.3 81.1 L149.0 86.8 L143.9 92.7 L139.0 98.8 L134.4 105.0 L129.9 111.4 L125.8 118.0 L121.8 124.7 L118.1 131.5 L114.7 138.5 L111.5 145.6 L108.5 152.9 L105.8 160.2 L103.4 167.6 L101.3 175.2 L99.4 182.8 L97.8 190.5 L96.4 198.3 L95.3 206.1 L94.5 214.0 L93.9 222.0 L93.6 229.9 L93.4 238.0 L92.7 246.1Z"/><path d="M243.7 415.7 L238.1 415.9 L232.7 415.2 L227.4 414.2 L222.0 412.9 L216.8 411.5 L211.6 409.9 L206.4 408.0 L201.3 406.0 L196.2 403.9 L191.3 401.5 L186.4 399.0 L181.5 396.4 L176.8 393.6 L172.1 390.6 L167.6 387.5 L163.1 384.3 L158.7 380.9 L154.4 377.4 L150.3 373.7 L146.3 370.0 L142.3 366.1 L138.5 362.0 L134.9 357.9 L131.3 353.6 L127.9 349.3 L124.7 344.8 L121.6 340.3 L118.6 335.6 L115.8 330.9 L113.1 326.1 L110.6 321.2 L108.3 316.2 L106.1 311.2 L104.1 306.1 L102.3 300.9 L100.6 295.7 L99.2 290.5 L98.0 285.1 L97.1 279.8 L97.1 274.2 L98.6 273.7 L101.7 278.3 L104.1 283.0 L106.5 287.7 L108.9 292.4 L111.4 297.0 L113.9 301.5 L116.5 306.0 L119.2 310.4 L122.0 314.7 L124.9 319.0 L127.8 323.2 L130.8 327.4 L133.9 331.5 L137.1 335.5 L140.3 339.5 L143.6 343.3 L147.0 347.1 L150.5 350.9 L154.1 354.5 L157.7 358.1 L161.4 361.6 L165.2 365.0 L169.0 368.4 L173.0 371.6 L177.0 374.8 L181.0 377.9 L185.1 381.0 L189.3 383.9 L193.6 386.8 L197.9 389.6 L202.3 392.3 L206.7 394.9 L211.2 397.4 L215.8 399.9 L220.4 402.3 L225.1 404.6 L229.8 406.8 L234.6 409.1 L239.4 411.3 L244.1 414.2Z"/><path d="M326.6 17.0 L333.0 16.6 L339.3 17.1 L345.5 17.9 L351.7 19.0 L357.9 20.4 L364.0 22.1 L370.1 23.9 L376.1 26.0 L382.0 28.3 L387.9 30.8 L393.6 33.5 L399.3 36.5 L404.9 39.6 L410.3 42.9 L415.7 46.4 L420.9 50.1 L426.0 54.0 L430.9 58.1 L435.7 62.3 L440.4 66.7 L444.9 71.2 L449.3 75.9 L453.5 80.8 L457.5 85.8 L461.3 90.9 L464.9 96.1 L468.4 101.5 L471.7 107.0 L474.8 112.6 L477.6 118.3 L480.3 124.1 L482.8 129.9 L485.0 135.9 L487.0 141.9 L488.8 147.9 L490.4 154.1 L491.7 160.2 L492.7 166.5 L493.3 172.7 L493.0 179.1 L491.5 179.4 L488.7 173.8 L486.4 168.1 L484.2 162.4 L481.9 156.8 L479.5 151.3 L476.9 145.8 L474.3 140.4 L471.5 135.1 L468.6 129.9 L465.6 124.8 L462.5 119.7 L459.2 114.8 L455.8 109.9 L452.3 105.1 L448.7 100.4 L444.9 95.8 L441.1 91.3 L437.1 87.0 L433.1 82.7 L428.9 78.5 L424.6 74.4 L420.2 70.5 L415.7 66.6 L411.2 62.9 L406.5 59.3 L401.7 55.8 L396.8 52.4 L391.9 49.2 L386.8 46.0 L381.7 43.0 L376.5 40.1 L371.2 37.4 L365.8 34.8 L360.3 32.2 L354.8 29.9 L349.2 27.6 L343.6 25.4 L337.9 23.3 L332.1 21.2 L326.4 18.5Z"/><path d="M496.4 205.6 L498.3 212.5 L499.2 219.5 L499.7 226.6 L499.9 233.7 L499.7 240.9 L499.2 248.0 L498.5 255.1 L497.5 262.2 L496.2 269.3 L494.6 276.3 L492.7 283.2 L490.6 290.1 L488.2 296.9 L485.6 303.6 L482.7 310.2 L479.5 316.7 L476.1 323.1 L472.4 329.4 L468.6 335.5 L464.4 341.4 L460.1 347.2 L455.6 352.8 L450.8 358.3 L445.8 363.5 L440.7 368.6 L435.3 373.4 L429.8 378.1 L424.1 382.5 L418.2 386.7 L412.2 390.7 L406.1 394.4 L399.8 397.9 L393.4 401.1 L386.9 404.1 L380.3 406.8 L373.6 409.2 L366.8 411.3 L359.9 413.1 L352.9 414.4 L345.7 414.8 L345.3 413.4 L351.5 409.9 L357.8 407.0 L364.0 404.0 L370.1 401.0 L376.1 397.8 L382.0 394.4 L387.8 390.9 L393.5 387.2 L399.0 383.4 L404.5 379.4 L409.8 375.3 L414.9 371.0 L420.0 366.6 L424.8 362.0 L429.6 357.3 L434.2 352.5 L438.6 347.5 L442.9 342.4 L447.1 337.1 L451.1 331.8 L454.9 326.3 L458.5 320.7 L462.0 315.0 L465.3 309.2 L468.4 303.3 L471.4 297.3 L474.2 291.3 L476.8 285.1 L479.2 278.8 L481.4 272.5 L483.5 266.1 L485.4 259.6 L487.0 253.0 L488.5 246.4 L489.8 239.8 L491.0 233.1 L491.9 226.3 L492.8 219.5 L493.5 212.6 L494.9 205.7Z"/><path d="M243 30 L262 22 L262 292 L243 292Z"/><path d="M330 22 L349 30 L349 296 L330 296Z"/><rect x="262" y="150" width="68" height="17"/><path d="M183 96 L250 238 L242 254 L183 170 L99 281 L86 276Z"/><circle cx="427" cy="197" r="61" fill="none" stroke="url(#au)" stroke-width="17"/><path d="M198 262 L216 268 L216 378 L198 384Z"/><path d="M198 262 L216 262 L300 368 L298 394Z"/><path d="M298 394 L300 368 L374 268 L390 262Z"/><path d="M372 270 L390 262 L390 402 L372 396Z"/><path d="M402 272 L420 268 L420 392 L402 386Z"/></g></svg>
+  <div class="word">AHOMI</div>
+  <div class="world">WORLD</div>
+  <p class="founder">Isabelle Bartoli<em>Designer &amp; Founder</em></p>
+
+  <div class="rule"></div>
 
   <h1>Stéphanie Hugon</h1>
   <p class="role">Chief Operating Officer for Development</p>
-
-  <div class="rule"></div>
 
   <div class="contact">
     <a href="tel:+212677361663"><span>MAROC</span>+212 6 77 36 16 63</a>
@@ -68,11 +67,7 @@ footer .pillars{margin-top:16px;font-family:"Cinzel",serif;font-size:8.5px;lette
     <a href="https://wa.me/212677361663?text=Bonjour%20St%C3%A9phanie%2C%20" target="_blank" rel="noopener">WhatsApp</a><i>·</i><button type="button" id="share">Partager</button>
   </p>
 
-  <footer>
-    <div class="house">AHOMI WORLD GROUP</div>
-    <p class="founder"><b>Isabelle Bartoli</b><br>Designer &amp; Founder</p>
-    <p class="pillars">ART · ARCHITECTURE · WELL-BEING<br>TECHNOLOGIE · INNOVATION</p>
-  </footer>
+  <p class="pillars">ART · ARCHITECTURE · WELL-BEING<br>TECHNOLOGIE · INNOVATION</p>
 </main>
 <div class="toast" id="toast">Lien copié</div>
 <script>
