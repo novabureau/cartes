@@ -73,6 +73,27 @@ a{color:inherit;text-decoration:none}
 .links i{font-style:normal;padding:0 10px;color:var(--gold)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);background:var(--ink);color:#fbe9cf;font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* échange de contacts */
+.swap{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:10px;padding:13px 20px;border-radius:999px;
+  background:rgba(255,250,242,.55);border:1.5px solid var(--gold);color:var(--ink);font-family:"Jost",sans-serif;font-weight:500;
+  font-size:13px;letter-spacing:.18em;cursor:pointer;transition:background .2s}
+.swap:active{background:rgba(255,245,230,.95)}
+.swap svg{width:17px;height:17px;color:var(--gold)}
+.xc{border:0;border-radius:22px;padding:26px 22px 22px;width:min(92vw,400px);background:#fbf3e8;color:var(--ink);
+  box-shadow:0 24px 60px -20px rgba(74,47,18,.6);font-family:"Jost",sans-serif;margin:auto}
+.xc::backdrop{background:rgba(36,23,11,.55)}
+.xc h3{font-family:"Source Serif 4",serif;font-weight:600;font-size:22px;margin-bottom:4px}
+.xc .lead{font-size:14px;color:#8c7154;margin-bottom:16px}
+.xc input,.xc textarea{width:100%;padding:12px 14px;margin-bottom:9px;border:1px solid rgba(176,122,50,.45);border-radius:12px;
+  background:#fffaf3;font:inherit;font-size:15px;color:var(--ink);outline:none}
+.xc input:focus,.xc textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,151,79,.2)}
+.xc .ok{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:#7a6047;margin:4px 0 16px;text-align:left;line-height:1.4}
+.xc .ok input{width:auto;margin:2px 0 0;accent-color:var(--gold)}
+.xc .acts{display:flex;gap:10px}
+.xc .acts button{flex:1;padding:13px;border-radius:999px;border:0;font:inherit;font-size:14px;letter-spacing:.06em;cursor:pointer}
+.xc .no{background:#efe2d2;color:var(--ink)}
+.xc .yes{background:linear-gradient(120deg,#8a6224,#c9a058 45%,#8a6224);color:#fffaf1;font-weight:500}
 </style>
 </head>
 <body>
@@ -82,6 +103,10 @@ a{color:inherit;text-decoration:none}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
       ENREGISTRER LE CONTACT
     </a>
+    <button type="button" class="swap" id="swapBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h13l-3-3M17 17H4l3 3"/></svg>
+      ÉCHANGER NOS CONTACTS
+    </button>
   </div>
 
   <section class="card" aria-label="Carte AHOMI World">
@@ -129,6 +154,22 @@ a{color:inherit;text-decoration:none}
     <a href="https://wa.me/212677361663?text=Bonjour%20St%C3%A9phanie%2C%20" target="_blank" rel="noopener">WhatsApp</a><i>·</i><button type="button" id="share">Partager</button>
   </p>
 </main>
+<dialog class="xc" id="xc">
+  <form id="xcForm">
+    <h3>Échangeons nos contacts</h3>
+    <p class="lead">Laissez vos coordonnées, Stéphanie vous recontacte.</p>
+    <input name="nom" placeholder="Nom et prénom *" autocomplete="name" required>
+    <input name="tel" type="tel" placeholder="Téléphone / WhatsApp *" autocomplete="tel" required>
+    <input name="email" type="email" placeholder="Email" autocomplete="email">
+    <input name="ste" placeholder="Société" autocomplete="organization">
+    <textarea name="msg" rows="2" placeholder="Message (facultatif)"></textarea>
+    <label class="ok"><input type="checkbox" required> J'accepte que mes coordonnées soient transmises à Stéphanie Hugon pour être recontacté(e).</label>
+    <div class="acts">
+      <button type="button" class="no" id="xcClose">Annuler</button>
+      <button type="submit" class="yes">Envoyer</button>
+    </div>
+  </form>
+</dialog>
 <div class="toast" id="toast">Lien copié</div>
 <script>
 (function(){
@@ -136,6 +177,20 @@ a{color:inherit;text-decoration:none}
   function copy(){try{navigator.clipboard.writeText(url).then(function(){t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1800)})}catch(e){}}
   document.getElementById('share').onclick=function(){
     if(navigator.share){navigator.share({title:'Stéphanie Hugon · AHOMI World',url:url}).catch(function(){})}else copy();
+  };
+  var d=document.getElementById('xc'),f=document.getElementById('xcForm');
+  document.getElementById('swapBtn').onclick=function(){if(d.showModal)d.showModal();else d.setAttribute('open','')};
+  document.getElementById('xcClose').onclick=function(){d.close?d.close():d.removeAttribute('open')};
+  f.onsubmit=function(e){
+    e.preventDefault();
+    var v=function(n){return (f.elements[n].value||'').trim()};
+    var m='Bonjour Stéphanie, voici mes coordonnées (via votre carte digitale) :\n'+
+      '• Nom : '+v('nom')+'\n• Téléphone : '+v('tel')+
+      (v('email')?'\n• Email : '+v('email'):'')+
+      (v('ste')?'\n• Société : '+v('ste'):'')+
+      (v('msg')?'\n\n'+v('msg'):'');
+    location.href='https://wa.me/212677361663?text='+encodeURIComponent(m);
+    d.close&&d.close();f.reset();
   };
 })();
 </script>
